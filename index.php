@@ -23,54 +23,9 @@ echo "<pre>";
 $desktops = [];
 $laptops = [];
 
-class Computer{
-
-    public function __construct(public string $name, public string $monitor, public string $hardDisk, public string $cpu, public string $type) {
-        $this->name = $name;
-        $this->monitor = $monitor;
-        $this->hardDisk = $hardDisk;
-        $this->cpu = $cpu;
-        $this->type = $type;
-    }
-
-    public function setType($type)
-    {
-       $type = 'nothing';
-    }
-
-}
-
-class Desktop extends Computer{
-    public function __construct($name, $monitor, $hardDisk, $cpu, $type, public string $case, public string $keyboard, public string $mouse,) {
-        parent::__construct($name, $monitor, $hardDisk, $cpu, $type);
-        $this->case = $case;
-        $this->keyboard = $keyboard;
-        $this->mouse = $mouse;
-    }
-
-    public function setType($type)
-    {
-        if ($type = 'desktop') {
-            $this->type = 'DESKTOP';
-        }
-    }
-    
-}
-
-class Laptop extends Computer{
-    public function __construct($name, $monitor, $hardDisk, $cpu, $type, public string $battery) {
-        parent::__construct($name, $monitor, $hardDisk, $cpu, $type);
-        $this->battery = $battery;
-    }
-
-    public function setType($type)
-    {
-        if ($type = 'laptop') {
-            $this->type = 'LAPTOP';
-        }
-    }
-
-}
+require __DIR__ . '/Models/Computer.php';
+require __DIR__ . '/Models/Desktop.php';
+require __DIR__ . '/Models/Laptop.php';
 
 $imac = new Desktop('IMac 24', 'Display Retina 24" 4.5k', 'hardisk IMac 24', '8-core', 'desktop', 'no case', 'Magic Keyboard con Touch ID', 'Magic Mouse');
 $macPro = new Desktop('Mac PRO', 'no monitor', 'hardisk MAC PRO', '28-core', 'desktop', 'Mac Pro Case', 'Magic Keyboard con Touch ID (argento e nero)', 'Magic Mouse (argento e nero)');
