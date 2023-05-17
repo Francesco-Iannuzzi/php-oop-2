@@ -56,18 +56,13 @@ class Laptop extends Computer{
 }
 
 $imac = new Desktop('IMac 24', 'Display Retina 24" 4.5k', 'hardisk IMac 24', '8-core', 'no case', 'Magic Keyboard con Touch ID', 'Magic Mouse');
-$macbook = new Laptop('MacBook Air(M2)', 'Display Liquid Retina 13.6" 4k', 'hardisk MacBook Air ', '8-core', 'Batteria ai polimeri di litio da 52,6 wattora');
+$macPro = new Desktop('Mac PRO', 'no monitor', 'hardisk MAC PRO', '28-core', 'Mac Pro Case', 'Magic Keyboard con Touch ID(argento e nero)', 'Magic Mouse(argento e nero)');
+$macbookAir = new Laptop('MacBook Air(M2)', 'Display Liquid Retina 13.6" 4k', 'hardisk MacBook Air ', '8-core', 'Batteria ai polimeri di litio da 52,6 wattora');
+$macbookPro = new Laptop('MacBook PRO', 'Display Liquid Retina XDR 14.2" 4k', 'hardisk MacBook PRO ', '10-core', 'Batteria ai polimeri di litio da 70 wattora');
 
-array_push($desktops, $imac);
-array_push($laptops, $macbook);
 
-foreach ($desktops as $desktop) {
-    
-};
-
-foreach ($laptops as $laptop) {
-    
-};
+array_push($desktops, $imac, $macPro);
+array_push($laptops, $macbookAir, $macbookPro);
 
 
 echo "</pre>";
@@ -99,7 +94,8 @@ echo "</pre>";
 
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <?php foreach ($desktops as $desktop) : ?>
+                    <div class="col d-flex justify-content-center">
                         <div class="card desktop" style="width:18rem;">
                             <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                                 class="card-img-top">
@@ -124,8 +120,10 @@ echo "</pre>";
                         <!-- /card desktop -->
                     </div>
                     <!-- /col -->
+                    <?php endforeach; ?>
 
-                    <div class="col">
+                    <?php foreach ($laptops as $laptop) : ?>
+                    <div class="col d-flex justify-content-center">
                         <div class="card laptop" style="width:18rem;">
                             <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                                 class="card-img-top">
@@ -148,6 +146,7 @@ echo "</pre>";
                         <!-- /card laptop -->
                     </div>
                     <!-- /col -->
+                    <?php endforeach; ?>
 
                 </div>
             </div>
