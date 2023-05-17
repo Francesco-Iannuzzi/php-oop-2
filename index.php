@@ -25,40 +25,48 @@ $laptops = [];
 
 class Computer{
 
-    public function __construct(public string $name, public string $monitor, public string $hardDisk, public string $cpu,) {
+    public function __construct(public string $name, public string $monitor, public string $hardDisk, public string $cpu, public string $type) {
         $this->name = $name;
         $this->monitor = $monitor;
         $this->hardDisk = $hardDisk;
         $this->cpu = $cpu;
-
+        $this->type = $type;
     }
 
 }
 
 class Desktop extends Computer{
-    public function __construct($name, $monitor, $hardDisk, $cpu, public string $case, public string $keyboard, public string $mouse,) {
-        parent::__construct($name, $monitor, $hardDisk, $cpu);
+    public function __construct($name, $monitor, $hardDisk, $cpu, $type, public string $case, public string $keyboard, public string $mouse,) {
+        parent::__construct($name, $monitor, $hardDisk, $cpu, $type);
         $this->case = $case;
         $this->keyboard = $keyboard;
         $this->mouse = $mouse;
+    }
 
+    public function setType()
+    {
+        $type = 'Desktop';
     }
     
 }
 
 class Laptop extends Computer{
-    public function __construct($name, $monitor, $hardDisk, $cpu, public string $battery) {
-        parent::__construct($name, $monitor, $hardDisk, $cpu);
+    public function __construct($name, $monitor, $hardDisk, $cpu, $type, public string $battery) {
+        parent::__construct($name, $monitor, $hardDisk, $cpu, $type);
         $this->battery = $battery;
+    }
 
+    public function setType()
+    {
+        $type = 'Laptop';
     }
 
 }
 
-$imac = new Desktop('IMac 24', 'Display Retina 24" 4.5k', 'hardisk IMac 24', '8-core', 'no case', 'Magic Keyboard con Touch ID', 'Magic Mouse');
-$macPro = new Desktop('Mac PRO', 'no monitor', 'hardisk MAC PRO', '28-core', 'Mac Pro Case', 'Magic Keyboard con Touch ID(argento e nero)', 'Magic Mouse(argento e nero)');
-$macbookAir = new Laptop('MacBook Air(M2)', 'Display Liquid Retina 13.6" 4k', 'hardisk MacBook Air ', '8-core', 'Batteria ai polimeri di litio da 52,6 wattora');
-$macbookPro = new Laptop('MacBook PRO', 'Display Liquid Retina XDR 14.2" 4k', 'hardisk MacBook PRO ', '10-core', 'Batteria ai polimeri di litio da 70 wattora');
+$imac = new Desktop('IMac 24', 'Display Retina 24" 4.5k', 'hardisk IMac 24', '8-core', 'setType()', 'no case', 'Magic Keyboard con Touch ID', 'Magic Mouse');
+$macPro = new Desktop('Mac PRO', 'no monitor', 'hardisk MAC PRO', '28-core','setType()', 'Mac Pro Case', 'Magic Keyboard con Touch ID(argento e nero)', 'Magic Mouse(argento e nero)');
+$macbookAir = new Laptop('MacBook Air(M2)', 'Display Liquid Retina 13.6" 4k', 'hardisk MacBook Air ', '8-core','setType()', 'Batteria ai polimeri di litio da 52,6 wattora');
+$macbookPro = new Laptop('MacBook PRO', 'Display Liquid Retina XDR 14.2" 4k', 'hardisk MacBook PRO ', '10-core','setType()', 'Batteria ai polimeri di litio da 70 wattora');
 
 
 array_push($desktops, $imac, $macPro);
@@ -101,19 +109,29 @@ echo "</pre>";
                                 class="card-img-top">
                             <div class="card-body">
 
-                                <h5 class="card-title"><?= $desktop->name ?></h5>
+                                <div>
+                                    <h5 class="card-title"><?= $desktop->name ?></h5>
+                                </div>
                                 <!-- /card-title -->
 
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->monitor ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->hardDisk ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->cpu ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->case ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->keyboard ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->mouse ?></h6>
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->monitor ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->hardDisk ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->cpu ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->case ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->keyboard ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->mouse ?></h6>
+                                </div>
                                 <!-- /card-subtitle -->
 
-                                <p class="card-text"></p>
+
+                                <div>
+                                    <p class="card-text"></p>
+                                </div>
                                 <!-- /card-text -->
+
+                                <span class="badge text-bg-primary"><?= $desktop->type ?></span>
+                                <!-- /info type badge -->
 
                             </div>
                         </div>
@@ -129,17 +147,26 @@ echo "</pre>";
                                 class="card-img-top">
                             <div class="card-body">
 
-                                <h5 class="card-title"><?= $laptop->name ?></h5>
+                                <div>
+                                    <h5 class="card-title"><?= $laptop->name ?></h5>
+                                </div>
                                 <!-- /card-title -->
 
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->monitor ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->hardDisk ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->cpu ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->battery ?></h6>
+                                <div>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->monitor ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->hardDisk ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->cpu ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->battery ?></h6>
+                                </div>
                                 <!-- /card-subtitle -->
 
-                                <p class="card-text"></p>
+                                <div>
+                                    <p class="card-text"></p>
+                                </div>
                                 <!-- /card-text -->
+
+                                <span class="badge text-bg-primary"><?= $laptop->type ?></span>
+                                <!-- /info type badge -->
 
                             </div>
                         </div>
