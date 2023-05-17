@@ -1,4 +1,5 @@
 <?php 
+
 /*
 
 Immaginiamo le classi per modellizzare un personal computer.
@@ -35,18 +36,39 @@ class Computer{
 }
 
 class Desktop extends Computer{
-    public $case;
-    public $keyboard;
-    public $mouse;
+    public function __construct($name, $monitor, $hardDisk, $cpu, public string $case, public string $keyboard, public string $mouse,) {
+        parent::__construct($name, $monitor, $hardDisk, $cpu);
+        $this->case = $case;
+        $this->keyboard = $keyboard;
+        $this->mouse = $mouse;
+
+    }
+    
 }
 
 class Laptop extends Computer{
-    public $battery;
+    public function __construct($name, $monitor, $hardDisk, $cpu, public string $battery) {
+        parent::__construct($name, $monitor, $hardDisk, $cpu);
+        $this->battery = $battery;
+
+    }
 
 }
 
-//$imac = new Desktop();
-//$macbook = new Laptop();
+$imac = new Desktop('IMac 24', 'Display Retina 24" 4.5k', 'hardisk IMac 24', '8-core', 'no case', 'Magic Keyboard con Touch ID', 'Magic Mouse');
+$macbook = new Laptop('MacBook Air(M2)', 'Display Liquid Retina 13.6" 4k', 'hardisk MacBook Air ', '8-core', 'Batteria ai polimeri di litio da 52,6 wattora');
+
+array_push($desktops, $imac);
+array_push($laptops, $macbook);
+
+foreach ($desktops as $desktop) {
+    
+};
+
+foreach ($laptops as $laptop) {
+    
+};
+
 
 echo "</pre>";
 
@@ -68,6 +90,75 @@ echo "</pre>";
 <body>
 
 
+
+    <header></header>
+    <!-- /header -->
+
+    <main>
+        <section>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="card desktop" style="width:18rem;">
+                            <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                                class="card-img-top">
+                            <div class="card-body">
+
+                                <h5 class="card-title"><?= $desktop->name ?></h5>
+                                <!-- /card-title -->
+
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->monitor ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->hardDisk ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->cpu ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->case ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->keyboard ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->mouse ?></h6>
+                                <!-- /card-subtitle -->
+
+                                <p class="card-text"></p>
+                                <!-- /card-text -->
+
+                            </div>
+                        </div>
+                        <!-- /card desktop -->
+                    </div>
+                    <!-- /col -->
+
+                    <div class="col">
+                        <div class="card laptop" style="width:18rem;">
+                            <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                                class="card-img-top">
+                            <div class="card-body">
+
+                                <h5 class="card-title"><?= $laptop->name ?></h5>
+                                <!-- /card-title -->
+
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->monitor ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->hardDisk ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->cpu ?></h6>
+                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->battery ?></h6>
+                                <!-- /card-subtitle -->
+
+                                <p class="card-text"></p>
+                                <!-- /card-text -->
+
+                            </div>
+                        </div>
+                        <!-- /card laptop -->
+                    </div>
+                    <!-- /col -->
+
+                </div>
+            </div>
+
+        </section>
+        <!-- /section -->
+    </main>
+    <!-- /main -->
+
+    <footer></footer>
+    <!-- /footer -->
 
 
 
