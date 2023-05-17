@@ -11,4 +11,4 @@
     <title>PHP OOP 2</title>
 </head>
 
-<body>
+<body class="bg-dark">

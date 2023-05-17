@@ -30,11 +30,11 @@ require __DIR__ . '/Views/Partials/header.php';
 <main>
     <section>
 
-        <div class="container">
+        <div class="container py-5">
             <div class="row">
                 <?php foreach ($desktops as $desktop) : ?>
                 <div class="col d-flex justify-content-center">
-                    <div class="card desktop" style="width:18rem;">
+                    <div class="card border-0 desktop" style="width:18rem;">
                         <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                             class="card-img-top">
                         <div class="card-body">
@@ -72,7 +72,7 @@ require __DIR__ . '/Views/Partials/header.php';
 
                 <?php foreach ($laptops as $laptop) : ?>
                 <div class="col d-flex justify-content-center">
-                    <div class="card laptop" style="width:18rem;">
+                    <div class="card border-0 laptop" style="width:18rem;">
                         <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                             class="card-img-top">
                         <div class="card-body">
