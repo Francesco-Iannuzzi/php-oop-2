@@ -35,8 +35,7 @@ require __DIR__ . '/Views/Partials/header.php';
                 <?php foreach ($desktops as $desktop) : ?>
                 <div class="col d-flex justify-content-center">
                     <div class="card border-0 desktop" style="width:18rem;">
-                        <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                            class="card-img-top">
+                        <img src="<?= $desktop->image ?>" class="card-img-top">
                         <div class="card-body">
 
                             <div>
@@ -73,8 +72,7 @@ require __DIR__ . '/Views/Partials/header.php';
                 <?php foreach ($laptops as $laptop) : ?>
                 <div class="col d-flex justify-content-center">
                     <div class="card border-0 laptop" style="width:18rem;">
-                        <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                            class="card-img-top">
+                        <img src="<?= $laptop->image ?>" class="card-img-top">
                         <div class="card-body">
 
                             <div>
