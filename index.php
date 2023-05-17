@@ -43,9 +43,11 @@ class Desktop extends Computer{
         $this->mouse = $mouse;
     }
 
-    public function setType()
+    public function setType($type)
     {
-        $type = 'Desktop';
+        if ($type = 'desktop') {
+            $this->type = 'DESKTOP';
+        }
     }
     
 }
@@ -56,17 +58,19 @@ class Laptop extends Computer{
         $this->battery = $battery;
     }
 
-    public function setType()
+    public function setType($type)
     {
-        $type = 'Laptop';
+        if ($type = 'laptop') {
+            $this->type = 'LAPTOP';
+        }
     }
 
 }
 
-$imac = new Desktop('IMac 24', 'Display Retina 24" 4.5k', 'hardisk IMac 24', '8-core', 'setType()', 'no case', 'Magic Keyboard con Touch ID', 'Magic Mouse');
-$macPro = new Desktop('Mac PRO', 'no monitor', 'hardisk MAC PRO', '28-core','setType()', 'Mac Pro Case', 'Magic Keyboard con Touch ID(argento e nero)', 'Magic Mouse(argento e nero)');
-$macbookAir = new Laptop('MacBook Air(M2)', 'Display Liquid Retina 13.6" 4k', 'hardisk MacBook Air ', '8-core','setType()', 'Batteria ai polimeri di litio da 52,6 wattora');
-$macbookPro = new Laptop('MacBook PRO', 'Display Liquid Retina XDR 14.2" 4k', 'hardisk MacBook PRO ', '10-core','setType()', 'Batteria ai polimeri di litio da 70 wattora');
+$imac = new Desktop('IMac 24', 'Display Retina 24" 4.5k', 'hardisk IMac 24', '8-core', 'setType(desktop)', 'no case', 'Magic Keyboard con Touch ID', 'Magic Mouse');
+$macPro = new Desktop('Mac PRO', 'no monitor', 'hardisk MAC PRO', '28-core','setType(desktop)', 'Mac Pro Case', 'Magic Keyboard con Touch ID (argento e nero)', 'Magic Mouse (argento e nero)');
+$macbookAir = new Laptop('MacBook Air(M2)', 'Display Liquid Retina 13.6" 4k', 'hardisk MacBook Air ', '8-core','setType(laptop)', 'Batteria ai polimeri di litio da 52,6 wattora');
+$macbookPro = new Laptop('MacBook PRO', 'Display Liquid Retina XDR 14.2" 4k', 'hardisk MacBook PRO ', '10-core','setType(laptop)', 'Batteria ai polimeri di litio da 70 wattora');
 
 
 array_push($desktops, $imac, $macPro);
