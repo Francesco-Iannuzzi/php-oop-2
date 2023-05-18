@@ -1,7 +1,14 @@
 <?php 
 class Computer{
 
-    public function __construct(public string $name, public string $monitor, public string $hardDisk, public string $cpu, public string $image) {
+    public $name;
+    public $monitor;
+    public $hardDisk;
+    public $cpu;
+    public $image;
+
+
+    public function __construct(string $name, string $monitor, string $hardDisk, string $cpu, string $image) {
         $this->name = $name;
         $this->monitor = $monitor;
         $this->hardDisk = $hardDisk;

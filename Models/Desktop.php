@@ -1,7 +1,11 @@
 <?php
 
 class Desktop extends Computer{
-    public function __construct($name, $monitor, $hardDisk, $cpu, $image, public string $case, public string $keyboard, public string $mouse,) {
+    public $case;
+    public $keyboard;
+    public $mouse;
+
+    public function __construct($name, $monitor, $hardDisk, $cpu, $image, string $case, string $keyboard, string $mouse,) {
         parent::__construct($name, $monitor, $hardDisk, $cpu, $image);
         $this->case = $case;
         $this->keyboard = $keyboard;

@@ -34,7 +34,7 @@ require __DIR__ . '/Views/Partials/header.php';
             <div class="row">
                 <?php foreach ($desktops as $desktop) : ?>
                 <div class="col d-flex justify-content-center">
-                    <div class="card border-0 desktop" style="width:18rem;">
+                    <div class="card border-0 desktop mb-4" style="width:18rem;">
                         <img src="<?= $desktop->image ?>" class="card-img-top">
                         <div class="card-body">
 
@@ -71,7 +71,7 @@ require __DIR__ . '/Views/Partials/header.php';
 
                 <?php foreach ($laptops as $laptop) : ?>
                 <div class="col d-flex justify-content-center">
-                    <div class="card border-0 laptop" style="width:18rem;">
+                    <div class="card border-0 laptop mb-4" style="width:18rem;">
                         <img src="<?= $laptop->image ?>" class="card-img-top">
                         <div class="card-body">
 
