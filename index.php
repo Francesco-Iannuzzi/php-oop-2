@@ -32,34 +32,33 @@ require __DIR__ . '/Views/Partials/header.php';
 
         <div class="container py-5">
             <div class="row">
-                <?php foreach ($desktops as $desktop) : ?>
+                <?php foreach ($computers as $computer) : ?>
                 <div class="col d-flex justify-content-center">
                     <div class="card border-0 desktop mb-4" style="width:18rem;">
-                        <img src="<?= $desktop->image ?>" class="card-img-top">
+                        <img src="<?= $computer->image ?>" class="card-img-top">
                         <div class="card-body">
 
                             <div>
-                                <h5 class="card-title"><?= $desktop->name ?></h5>
+                                <h5 class="card-title"><?= $computer->name ?></h5>
                             </div>
                             <!-- /card-title -->
 
-                            <div>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->monitor ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->hardDisk ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->cpu ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->case ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->keyboard ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $desktop->mouse ?></h6>
-                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2 text-muted "><?= $computer->monitor ?></li>
+                                <li class="mb-2 text-muted "><?= $computer->hardDisk ?></li>
+                                <li class="mb-2 text-muted "><?= $computer->cpu ?></li>
+                                <?php if ($computer->getType() == 'Desktop') : ?>
+                                <li class="mb-2 text-muted "><?= $computer->case ?></li>
+                                <li class="mb-2 text-muted "><?= $computer->keyboard ?></li>
+                                <li class="mb-2 text-muted "><?= $computer->mouse ?></li>
+                                <?php elseif ($computer->getType() == 'Laptop'): ?>
+                                <li class="mb-2 text-muted "><?= $computer->battery ?></li>
+                                <?php endif; ?>
+                            </ul>
                             <!-- /card-subtitle -->
 
-
-                            <div>
-                                <p class="card-text"></p>
-                            </div>
-                            <!-- /card-text -->
-
-                            <span class="badge text-bg-primary"><?= $desktop->getType() ?></span>
+                            <span
+                                class="badge <?= $computer->getType() == 'Desktop' ? 'text-bg-primary' : 'text-bg-danger'; ?> p-2"><?= $computer->getType() ?></span>
                             <!-- /info type badge -->
 
                         </div>
@@ -68,41 +67,6 @@ require __DIR__ . '/Views/Partials/header.php';
                 </div>
                 <!-- /col -->
                 <?php endforeach; ?>
-
-                <?php foreach ($laptops as $laptop) : ?>
-                <div class="col d-flex justify-content-center">
-                    <div class="card border-0 laptop mb-4" style="width:18rem;">
-                        <img src="<?= $laptop->image ?>" class="card-img-top">
-                        <div class="card-body">
-
-                            <div>
-                                <h5 class="card-title"><?= $laptop->name ?></h5>
-                            </div>
-                            <!-- /card-title -->
-
-                            <div>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->monitor ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->hardDisk ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->cpu ?></h6>
-                                <h6 class="card-subtitle mb-2 text-muted "><?= $laptop->battery ?></h6>
-                            </div>
-                            <!-- /card-subtitle -->
-
-                            <div>
-                                <p class="card-text"></p>
-                            </div>
-                            <!-- /card-text -->
-
-                            <span class="badge text-bg-primary"><?= $laptop->getType() ?></span>
-                            <!-- /info type badge -->
-
-                        </div>
-                    </div>
-                    <!-- /card laptop -->
-                </div>
-                <!-- /col -->
-                <?php endforeach; ?>
-
             </div>
         </div>
 

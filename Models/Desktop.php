@@ -14,7 +14,7 @@ class Desktop extends Computer{
 
     public function getType()
     {
-        return 'Computer';
+        return 'Desktop';
     }
     
 }

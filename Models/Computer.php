@@ -18,7 +18,7 @@ class Computer{
 
     public function getType()
     {
-        return 'Desktop';
+        return 'Computer';
     }
 
 }
