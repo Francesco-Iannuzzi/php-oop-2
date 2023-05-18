@@ -2,6 +2,8 @@
 
 /*
 
+DAY 1
+
 Immaginiamo le classi per modellizzare un personal computer.
 - Un computer desktop é un computer.
 - Un computer portatile é un computer.
@@ -15,6 +17,13 @@ Nella card, indichiamo anche che tipo di prodotto stiamo visualizzando (desktop,
 BONUS:
 - pensate a cosa compone un pc: 'ha un' monitor? 'ha una' mbo? 'ha una' keyboard? usate la composizione per indicare costruire appropriatamente le istanze.
 - aggiungere un metodo che stampi la stringa con tutte le info del dispositivo (oltre ai getter/setters necessari).
+
+DAY 2
+
+oggi continuate a lavorare nella stessa repo di ieri aggiungendo almeno un trait.
+
+Bonus:
+- aggiungete un exception
 
 */
 
@@ -33,13 +42,13 @@ require __DIR__ . '/Views/Partials/header.php';
         <div class="container py-5">
             <div class="row">
                 <?php foreach ($computers as $computer) : ?>
-                <div class="col d-flex justify-content-center">
+                <div class="col d-flex">
                     <div class="card border-0 desktop mb-4" style="width:18rem;">
                         <img src="<?= $computer->image ?>" class="card-img-top">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column justify-content-between">
 
                             <div>
-                                <h5 class="card-title"><?= $computer->name ?></h5>
+                                <h4 class="card-title"><?= $computer->name ?></h4>
                             </div>
                             <!-- /card-title -->
 
@@ -55,10 +64,10 @@ require __DIR__ . '/Views/Partials/header.php';
                                 <li class="mb-2 text-muted "><?= $computer->battery ?></li>
                                 <?php endif; ?>
                             </ul>
-                            <!-- /card-subtitle -->
+                            <!-- /card-list -->
 
                             <span
-                                class="badge <?= $computer->getType() == 'Desktop' ? 'text-bg-primary' : 'text-bg-danger'; ?> p-2"><?= $computer->getType() ?></span>
+                                class="badge <?= $computer->getType() == 'Desktop' ? 'text-bg-primary' : 'text-bg-danger'; ?> p-2 align-self-start"><?= $computer->getType() ?></span>
                             <!-- /info type badge -->
 
                         </div>
