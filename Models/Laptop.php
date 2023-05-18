@@ -14,7 +14,7 @@ class Laptop extends Computer{
 
     public function getDetails()
     {
-        return "Name: {$this->name} - Monitor: {$this->monitor} - Hard Disk: {$this->hardDisk} CPU: {$this->cpu} - Battery: {$this->battery} ";
+        return "Name: {$this->name} - Monitor: {$this->monitor} - Hard Disk: {$this->hardDisk} CPU: {$this->cpu} - Battery: {$this->battery} - Price: {$this->getPrice()}";
     }
 
 }

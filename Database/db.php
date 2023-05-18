@@ -6,3 +6,8 @@ $computers = [
     new Laptop('MacBook Air(M2)', 'Display Liquid Retina 13.6" 4k', 'hardisk MacBook Air ', '8-core', './assets/img/macbook_air.png', 'Batteria ai polimeri di litio da 52,6 wattora'),
     new Laptop('MacBook PRO', 'Display Liquid Retina XDR 14.2" 4k', 'hardisk MacBook PRO ', '10-core', './assets/img/macbook_pro.png', 'Batteria ai polimeri di litio da 70 wattora'),
 ];
+
+$computers[0]->setPrice(1579, 'euro');
+$computers[1]->setPrice(6599, 'euro');
+$computers[2]->setPrice(1529, 'euro');
+$computers[3]->setPrice(3099, 'euro');

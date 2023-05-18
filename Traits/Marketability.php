@@ -5,12 +5,12 @@ trait Marketability
     public $price;
     public function getPrice()
     {
-        return $this->code;
+        return $this->price;
     }
 
-    public function setPrice(int $numb, string $unit)
+    public function setPrice(float $numb, string $unit)
     {
-        $this->code = $numb . $unit;
+        $this->price = $numb.'.00 ' . $unit;
     }
 
 }
