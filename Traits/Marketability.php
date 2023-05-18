@@ -10,7 +10,7 @@ trait Marketability
 
     public function setPrice(float $numb, string $unit)
     {
-        $this->price = $numb.'.00 ' . $unit;
+        $this->price = $numb .'.00 ' . $unit;
     }
 
 }

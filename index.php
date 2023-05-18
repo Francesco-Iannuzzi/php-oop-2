@@ -39,8 +39,8 @@ require __DIR__ . '/Views/Partials/header.php';
 <main>
     <section>
 
-        <div class="container py-5">
-            <div class="row">
+        <div class="container">
+            <div class="row py-5">
                 <?php foreach ($computers as $computer) : ?>
                 <div class="col d-flex">
                     <div class="card border-0 desktop mb-4" style="width:18rem;">
@@ -63,6 +63,7 @@ require __DIR__ . '/Views/Partials/header.php';
                                 <?php elseif ($computer->getType() == 'Laptop'): ?>
                                 <li class="mb-2 text-muted "><?= $computer->battery ?></li>
                                 <?php endif; ?>
+                                <li class="mb-2 text-muted "><?= $computer->getPrice() ?></li>
                             </ul>
                             <!-- /card-list -->
 
@@ -76,12 +77,12 @@ require __DIR__ . '/Views/Partials/header.php';
 
 
                         <div class="card-dropdown text-center mb-2">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 More details
                             </button>
                             <ul class="dropdown-menu">
-                                <li><?= $computer->getDetails() ?></li>
+                                <li><?= $computer->getEssential() ?></li>
                             </ul>
                         </div>
                         <!-- /dropdown -->
