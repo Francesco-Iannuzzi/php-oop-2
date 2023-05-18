@@ -1,5 +1,9 @@
 <?php 
+
+require __DIR__ . '/../Traits/Marketability.php';
 class Computer{
+
+    use Marketability;
 
     public $name;
     public $monitor;
@@ -14,11 +18,6 @@ class Computer{
         $this->hardDisk = $hardDisk;
         $this->cpu = $cpu;
         $this->image = $image;
-    }
-
-    public function getType()
-    {
-        return 'Computer';
     }
 
 }

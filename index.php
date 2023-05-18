@@ -67,10 +67,25 @@ require __DIR__ . '/Views/Partials/header.php';
                             <!-- /card-list -->
 
                             <span
-                                class="badge <?= $computer->getType() == 'Desktop' ? 'text-bg-primary' : 'text-bg-danger'; ?> p-2 align-self-start"><?= $computer->getType() ?></span>
+                                class="badge <?= $computer->getType() == 'Desktop' ? 'text-bg-primary' : 'text-bg-danger'; ?> p-2 align-self-start"><?= $computer->getType() ?>
+                            </span>
                             <!-- /info type badge -->
 
                         </div>
+                        <!-- /card-body -->
+
+
+                        <div class="card-dropdown text-center mb-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                More details
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><?= $computer->getDetails() ?></li>
+                            </ul>
+                        </div>
+                        <!-- /dropdown -->
+
                     </div>
                     <!-- /card desktop -->
                 </div>

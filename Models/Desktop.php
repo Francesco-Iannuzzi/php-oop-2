@@ -16,5 +16,10 @@ class Desktop extends Computer{
     {
         return 'Desktop';
     }
+
+    public function getDetails()
+    {
+        return "Name: {$this->name} - Monitor: {$this->monitor} - Hard Disk: {$this->hardDisk} CPU: {$this->cpu} - Case: {$this->case} - Keyboard: {$this->keyboard} - Mouse: {$this->mouse} - Price: {$this->getPrice()}";
+    }
     
 }
