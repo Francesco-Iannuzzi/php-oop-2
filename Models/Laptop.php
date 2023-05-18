@@ -1,15 +1,14 @@
 <?php 
 
 class Laptop extends Computer{
-    public function __construct($name, $monitor, $hardDisk, $cpu, $type, $image, public string $battery) {
-        parent::__construct($name, $monitor, $hardDisk, $cpu, $type, $image);
+    public function __construct($name, $monitor, $hardDisk, $cpu, $image, public string $battery) {
+        parent::__construct($name, $monitor, $hardDisk, $cpu, $image);
         $this->battery = $battery;
     }
 
-    public function setType($type)
+    public function getType()
     {
-        $this->type = 'LAPTOP';
-       return $this->type;
+        return 'Laptop';
     }
 
 }

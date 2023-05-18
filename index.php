@@ -59,7 +59,7 @@ require __DIR__ . '/Views/Partials/header.php';
                             </div>
                             <!-- /card-text -->
 
-                            <span class="badge text-bg-primary"><?= $desktop->type ?></span>
+                            <span class="badge text-bg-primary"><?= $desktop->getType() ?></span>
                             <!-- /info type badge -->
 
                         </div>
@@ -93,7 +93,7 @@ require __DIR__ . '/Views/Partials/header.php';
                             </div>
                             <!-- /card-text -->
 
-                            <span class="badge text-bg-primary"><?= $laptop->type ?></span>
+                            <span class="badge text-bg-primary"><?= $laptop->getType() ?></span>
                             <!-- /info type badge -->
 
                         </div>
