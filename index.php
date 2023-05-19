@@ -42,8 +42,8 @@ require __DIR__ . '/Views/Partials/header.php';
         <div class="container">
             <div class="row py-5">
                 <?php foreach ($computers as $computer) : ?>
-                <div class="col d-flex">
-                    <div class="card border-0 desktop mb-4" style="width:18rem;">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 d-flex">
+                    <div class="card border-0 desktop mb-4">
                         <img src="<?= $computer->image ?>" class="card-img-top">
                         <div class="card-body d-flex flex-column justify-content-between">
 
@@ -79,7 +79,7 @@ require __DIR__ . '/Views/Partials/header.php';
                         <div class="card-dropdown text-center mb-2">
                             <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                More details
+                                Essentials details
                             </button>
                             <ul class="dropdown-menu">
                                 <li><?= $computer->getEssential() ?></li>
