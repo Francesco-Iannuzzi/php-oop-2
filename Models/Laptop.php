@@ -7,7 +7,7 @@ class Laptop extends Computer{
         $this->battery = $battery;
     }
 
-    public function getType()
+    public static function getType()
     {
         return 'Laptop';
     }

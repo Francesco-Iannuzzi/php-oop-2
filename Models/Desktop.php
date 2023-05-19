@@ -12,7 +12,7 @@ class Desktop extends Computer{
         $this->mouse = $mouse;
     }
 
-    public function getType()
+    public static function getType()
     {
         return 'Desktop';
     }

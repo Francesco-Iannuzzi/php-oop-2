@@ -2,7 +2,7 @@
 
 trait Marketability
 {
-    public $price;
+    private $price;
     public function getPrice()
     {
         return $this->price;
